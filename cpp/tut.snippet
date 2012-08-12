@@ -1,0 +1,27 @@
+#include <tut.h>
+
+namespace tut {
+
+struct test_${1:target}_fixture {
+    test_$1_fixture() {
+    }
+
+    ~test_$1_fixture() {
+    }
+
+};  //  struct test_$1_fixture
+
+typedef test_group<test_$1_fixture> $1_test_group;
+
+$1_test_group $1_tests("${2:test suite description}");
+
+typedef $1_test_group::object test_base;
+
+template<> template<>
+void test_base::test<${3:1}>() {
+    set_test_name("${4:test case description}");
+
+    ${5}
+}
+
+}   //  namespace tut

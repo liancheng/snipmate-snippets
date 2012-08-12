@@ -1,0 +1,12 @@
+struct ${1:foo}_fixture {
+    $1_fixture() {
+    }
+
+    ~$1_fixture() {
+    }
+
+};  //  struct $1_fixture
+
+BOOST_FIXTURE_TEST_CASE(test_${2}, $1_fixture) {
+    ${3}
+}

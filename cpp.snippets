@@ -1,0 +1,43 @@
+# Namespace
+snippet ns
+	namespace ${1:`Filename('', 'my')`} {
+
+	${2}
+
+	} // namespace $1
+# Using namespace
+snippet usi
+	using namespace ${1};
+# For STL container iteration
+snippet iter
+	for (${1:iterator_type} ${2:i} = ${3:c}.begin(); $2 != $3.end(); ${4:++}$2) {
+	    ${5}
+	}
+# Class
+snippet class
+	class ${1:name} {
+	public:
+	    $1(${2});
+	    virtual ~$1();
+
+	private:
+	    ${3}
+
+	}; // class $1
+# The m_ class data member prefix
+snippet cout
+	cout << ${1} << endl;
+snippet scout
+	std::cout << ${1} << std::endl;
+snippet cerr
+	cerr << ${1} << endl;
+snippet scerr
+	std::cerr << ${1} << std::endl;
+snippet format
+	cout << format("${1}") % ${2} << endl;
+snippet sformat
+	std::cout << boost::format("${1}") % ${2} << std::endl;
+snippet begin
+	${1:c}.begin(), $1.end()${2}
+snippet template
+	template<typename ${1:Type}>${2}

@@ -1,0 +1,95 @@
+snippet l
+	\`\`${1}\`\`${2}
+snippet el
+	\ \`\`${1}\`\`\ ${2}
+snippet i
+	*${1}*${2}
+snippet ei
+	\ *${1}*\ ${2}
+snippet b
+	**${1}**${2}
+snippet eb
+	\ **${1}**\ ${2}
+snippet a
+	\`${1}\`__${2}
+snippet ea
+	\ \`${1}\`__\ ${2}
+snippet r
+	\`${1}\`${2}
+snippet er
+	\ \`${1}\`\ ${2}
+snippet s
+	|${1}|${2}
+snippet es
+	\ |${1}|\ ${2}
+snippet t
+	:term:\`${1}\`${2}
+snippet et
+	\ :term:\`${1}\`\ ${2}
+snippet code
+	.. code-block:: ${1:erlang}
+
+	    ${2}
+snippet erlang
+	.. code-block:: erlang
+
+	    ${1}
+snippet cpp
+	.. code-block:: c++
+
+	    ${1}
+snippet ref
+	:ref:\`${1} <${2}>\`
+snippet eref
+	\ :ref:\`${1} <${2}>\`\ ${3}
+snippet math
+	:math:\`${1}\`
+snippet emath
+	\ :math:\`${1}\`\ ${2}
+snippet term
+	:term:\`${1}\`
+snippet eterm
+	\ :term:\`${1}\`\ ${2}
+snippet erefsect
+	\ :ref:\`${1:}节 <section-$1>\`\ ${2}
+snippet erefsub
+	\ :ref:\`${1:}小节 <subsection-$1>\`\ ${2}
+snippet erefpart
+	\ :ref:\`第${1:}部分 <part-$1>\`\ ${2}
+snippet erefch
+	\ :ref:\`第${1:}章 <chapter-$1>\`\ ${2}
+snippet erefls
+	\ :ref:\`清单${1:} <listing-$1>\`\ ${2}
+snippet ereffig
+	\ :ref:\`图${1:} <figure-$1>\`\ ${2}
+snippet ereftab
+	\ :ref:\`表${1:} <table-$1>\`\ ${2}
+snippet kbd
+	:kbd:\`${1:}\`${2}
+snippet ekbd
+	\ :kbd:\`${1:}\`\ ${2}
+snippet figure
+	.. _figure-${1:n}.${2:m}:
+
+	.. compound::
+
+	    .. figure:: figure-$1_$2.png
+	        :align: center
+
+	        图$1.$2  ${3:Title}
+
+	    .. rubric:: 图中的文字
+
+	    ${4}
+
+snippet listing
+	.. _listing-${1:n}.${2:m}:
+
+	.. compound::
+
+	    .. rubric:: 清单$1.$2  ${3:Title}
+			:class: listing-caption
+
+	    .. parsed-literal::
+
+	        ${4}

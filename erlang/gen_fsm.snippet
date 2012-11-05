@@ -1,0 +1,61 @@
+-module(${1:`Filename('', 'untitled')`}).
+
+-behaviour(gen_fsm).
+
+%% API
+-export([start_link/0]).
+
+%% gen_fsm callbacks
+-export([init/1,
+		 handle_event/3,
+		 handle_sync_event/4,
+		 handle_info/3,
+		 terminate/3,
+		 code_change/4
+		]).
+
+%% gen_fsm state functions
+-export([$2/2,
+		 $2/3
+		]).
+
+-record(state, {}).
+
+-define(SERVER, ?MODULE).
+
+%% API functions
+
+start_link() ->
+    gen_fsm:start_link({local, ?SERVER}, ?MODULE, [], []).
+
+%% gen_fsm callbacks
+
+init([]) ->
+    {ok, ${2:state_name}, #state{}}.
+
+handle_event(_Event, StateName, State) ->
+    {next_state, StateName, State}.
+
+handle_sync_event(_Event, _From, StateName, State) ->
+    Reply = ok,
+    {reply, Reply, StateName, State}.
+
+handle_info(_Info, StateName, State) ->
+    {next_state, StateName, State}.
+
+terminate(_Reason, _StateName, _State) ->
+    ok.
+
+code_change(_OldVsn, StateName, State, _Extra) ->
+    {ok, StateName, State}.
+
+%% gen_fsm state functions
+
+$2(_Event, State) ->
+	{reply, {error, invalid_message}, $2, State}.
+
+$2(_Event, _From, State) ->
+	{reply, {error, invalid_message}, $2, State}.
+
+
+%% Internal functions

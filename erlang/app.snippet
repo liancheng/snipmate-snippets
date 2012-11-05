@@ -1,0 +1,12 @@
+-module(${1:`Filename('', 'untitled')`}).
+
+-behaviour(application).
+
+%% application callbacks
+-export([start/2, stop/1]).
+
+start(_Type, _Args) ->
+    ${1:Module}:${2:start_link}().
+
+stop(_State) ->
+    ok.

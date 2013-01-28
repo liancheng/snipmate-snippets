@@ -10,15 +10,15 @@ snippet usi
 	using namespace ${1};
 # For STL container iteration
 snippet iter
-	for (${1:iterator_type} ${2:i} = ${3:c}.begin(); $2 != $3.end(); ${4:++}$2) {
+	for (${1:iterator_type} ${2:i} = ${3:c}.begin (); $2 != $3.end (); ${4:++}$2) {
 	    ${5}
 	}
 # Class
 snippet class
 	class ${1:name} {
 	public:
-	    $1(${2});
-	    virtual ~$1();
+	    $1 (${2});
+	    virtual ~$1 ();
 
 	private:
 	    ${3}
@@ -36,8 +36,8 @@ snippet scerr
 snippet format
 	cout << format("${1}") % ${2} << endl;
 snippet sformat
-	std::cout << boost::format("${1}") % ${2} << std::endl;
+	std::cout << boost::format ("${1}") % ${2} << std::endl;
 snippet begin
-	${1:c}.begin(), $1.end()${2}
+	${1:c}.begin (), $1.end ()${2}
 snippet template
 	template<typename ${1:Type}>${2}

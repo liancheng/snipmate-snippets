@@ -16,17 +16,17 @@ snippet inc
 snippet Def
 	#ifndef $1
 	#define ${1:macro} ${2:value}
-	#endif // #ifndef $1
+	#endif /* #ifndef $1 */
 snippet def
 	#define 
 snippet ifdef
 	#ifdef ${1:macro}
 	${2:#define }
-	#endif // #ifdef $1
+	#endif /* #ifdef $1 */
 snippet #if
 	#if ${1:/* condition */}
 	${2}
-	#endif // #if $1
+	#endif /* #if $1 */
 # Header Include-Guard
 # (the randomizer code is taken directly from TextMate; it could probably be
 # cleaner, I don't know how to do it in vim script)
@@ -36,7 +36,7 @@ snippet once
 
 	${4}
 
-	#endif  //  __$1_$2_$3__
+	#endif /* __$1_$2_$3__ */
 # If Condition
 snippet if
 	if (${1}) {
@@ -64,8 +64,8 @@ snippet for
 	}
 # Custom For Loop
 snippet forr
-	for (${1:i} = ${2:0}; ${3:$1 < 10}; ${4:++}$1) {
-	    ${5}
+	for (${1}; ${2}; ${3}) {
+	    ${4}
 	}
 # Struct
 snippet struct

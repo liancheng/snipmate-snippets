@@ -8,11 +8,6 @@ snippet ns
 # Using namespace
 snippet usi
 	using namespace ${1};
-# For STL container iteration
-snippet iter
-	for (${1:iterator_type} ${2:i} = ${3:c}.begin (); $2 != $3.end (); ${4:++}$2) {
-	    ${5}
-	}
 # Class
 snippet class
 	class ${1:name} {
@@ -39,5 +34,9 @@ snippet sformat
 	std::cout << boost::format ("${1}") % ${2} << std::endl;
 snippet begin
 	${1:c}.begin (), $1.end ()${2}
+snippet rbegin
+	${1:c}.rbegin (), $1.rend ()${2}
+snippet fbegin
+	begin (${1:c}), end ($1)${2}
 snippet template
 	template<typename ${1:Type}>${2}
